@@ -31,9 +31,7 @@ function adicionarTarefa(task) {
   listItem.textContent = task;
   listItem.tabIndex = 0;
   div.appendChild(listItem);
-
-  addExcluir(div, excluir);
-
+  
   const logicaDoEstado = (listItem) => {
     if (listItem.classList.contains("progress")) {
       listItem.classList.remove("progress");
@@ -44,7 +42,7 @@ function adicionarTarefa(task) {
       listItem.classList.add("progress");
     }
   };
-
+  
   listItem.addEventListener("click", function () {
     logicaDoEstado(listItem);
   });
@@ -54,15 +52,17 @@ function adicionarTarefa(task) {
       logicaDoEstado(listItem);
     }
   });
+
+  addExcluir(div, excluir, task);
 }
 
-function addExcluir(div, excluir) {
+function addExcluir(div, excluir, task) {
   const logicaExcluir = (excluir) => {
     confirm("Deseja realmente excluir esta tarefa?") && taskList.removeChild(div);
   };
 
   excluir.className = "delete-button";
-  excluir.ariaLabel = "Excluir tarefa";
+  excluir.ariaLabel = `Excluir a tarefa: ${task}`;
   div.appendChild(excluir);
 
   excluir.addEventListener("click", function () {

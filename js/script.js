@@ -65,11 +65,13 @@ function addExcluir(div, excluir) {
   excluir.ariaLabel = "Excluir tarefa";
   div.appendChild(excluir);
 
-  excluir.addEventListener("click", function (event) {
+  excluir.addEventListener("click", function () {
     logicaExcluir(excluir);
   });
 
   excluir.addEventListener("keydown", function (event) {
-    logicaExcluir(excluir);
+    if (event.key === "Enter"){
+      logicaExcluir(excluir);
+    }
   });
 }

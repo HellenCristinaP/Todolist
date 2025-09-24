@@ -1,0 +1,55 @@
+.task-item {
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    font-size: 1.25rem;
+
+    &:before {
+        content: url("../icons/circle.svg");
+        margin-right: 5px;
+        justify-content: center;
+    }
+}
+
+.task-item.progress {
+    color: orange;
+
+    &:before {
+        content: url("../icons/progress.svg");
+    }
+}
+
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: darkgreen;
+
+    &:before {
+        content: url("../icons/check.png");
+
+    }
+}
+
+.delete-button {
+    border: none;
+    border-radius: 10px;
+    color: red;
+    text-shadow: 1px 1px 2px #00000042;
+    padding: 25px 20px;
+    cursor: pointer;
+    margin-right: 5px;
+
+    /* imagem de excluir */
+    background-image: url("../icons/trash.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ff00005d;
+    
+
+    &:hover {
+        background-color: darkred;
+        background-image: url("../icons/trashative.svg");
+    }
+
+}

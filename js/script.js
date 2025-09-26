@@ -1,10 +1,15 @@
 const inputTask = document.getElementById("taskInput");
 const btnSubmit = document.getElementById("submit");
 const taskList = document.getElementById("taskList");
+const form = document.querySelector("form");
 
-btnSubmit.addEventListener("click", validacao);
+form.addEventListener("submit", function(e) {
+  validacao(e);
+});
 
-function validacao() {
+function validacao(e) {
+  e.preventDefault();
+
   const task = inputTask.value;
 
   if (task === "") {
@@ -30,16 +35,21 @@ function adicionarTarefa(task) {
   listItem.className = "task-item";
   listItem.textContent = task;
   listItem.tabIndex = 0;
+  listItem.ariaLabel = `Tarefa: ${task}, pendente`;
+  listItem.ariaDescription = "Clique para mudar o estado da tarefa";
   div.appendChild(listItem);
   
   const logicaDoEstado = (listItem) => {
     if (listItem.classList.contains("progress")) {
       listItem.classList.remove("progress");
       listItem.classList.add("completed");
+      listItem.ariaLabel = `Tarefa: ${task}, concluída`;
     } else if (listItem.classList.contains("completed")) {
       listItem.classList.remove("completed");
+      listItem.ariaLabel = `Tarefa: ${task}, pendente`;
     } else {
       listItem.classList.add("progress");
+      listItem.ariaLabel = `Tarefa: ${task}, em andamento`;
     }
   };
   

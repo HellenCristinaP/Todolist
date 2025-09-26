@@ -5,20 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendendo JS</title>
-    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/estado.css">
 </head>
 
 <body>
     <main>
         <h1>Seja bem-vindo ao To-do List</h1>
-        <div id="formContainer">
-            <form>
-                <input type="text" id="taskInput" placeholder="Digite uma tarefa" required>
-            </form>
+        <section>
+            <h2>Tutorial</h2>
+            <p>Digite o nome da tarefa e aperte no botão ou no <kbd>Enter</kbd></p>
+            <p>A tarefa tem 3 estados, que muda conforme clica nela:</p>
+            <ul>
+                <li>1º estado: tarefa pendente <img src="icons/circle.svg" alt="imagem de pendente" aria-hidden="true"></li>
+                <li>2º estado: tarefa em andamento <img src="icons/progress.svg" alt="imagem de andamento" aria-hidden="true"></li>
+                <li>3º estado: tarefa concluída <img src="icons/check.png" alt="imagem de concluída" aria-hidden="true"></li>
+            </ul>
+        </section>
+        <form>
+            <input type="text" id="taskInput" placeholder="Digite uma tarefa" required>
             <button id="submit">Adicionar</button>
-        </div>
+        </form>
         <ul id="taskList">
             <!-- As tarefas serão adicionadas aqui -->
         </ul>

@@ -1,21 +1,68 @@
+/* import css */
+@import url('./reset.css');
+@import url('./estado.css');
+/* import fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    background: #893bff;
-    background: linear-gradient(350deg, rgba(137, 59, 255, 1) 0%, rgba(255, 236, 64, 1) 100%);
-    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+    min-height: 100vhw;
 }
 
 h1 {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-    color: black;
     margin-top: 20px;
     margin-bottom: 20px;
+
+    color: #f3e6ff;
+    text-shadow: 0px 1px 4px #00000049, -1px 0px 4px #00000049, 0px -1px 4px #00000049, 1px 0px 4px #00000049, 1px 1px 4px #00000049;
 }
 
-input{
+section {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    background-color: #c7c7c74d;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #000000;
+    text-align: center;
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding: 5px 0;
+    }
+
+    ul {
+        box-shadow: 0 2px 5px #00000049;
+        border: #000000 1px solid;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px auto;
+        width: 80%;
+    }
+}
+
+kbd {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: #202020;
+    background-color: #eeeeee7e;
+    border: 1px solid #f3f3f3;
+    border-radius: 3px;
+    padding: 1px 5px;
+    white-space: nowrap;
+}
+
+input {
     font-size: 1rem;
     padding: 10px;
     margin-right: 15px;
@@ -26,7 +73,7 @@ input{
 }
 
 #submit {
-    background-color: #008cff;
+    background-color: #129700;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -35,11 +82,15 @@ input{
     font-size: 1rem;
 
     &:hover {
-        background-color: #008cffc4;
+        background-color: #0e7a00;
+    }
+
+    &:active {
+        background-color: #0a5200;
     }
 }
 
-#formContainer {
+form {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -47,11 +98,15 @@ input{
     width: 100%;
 }
 
-
-ul {
-    background-color: #ffffff86;
+main > ul {
+    /* From https://css.glass */
+    background: rgba(8, 1, 39, 0.199);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(7, 0, 0, 0.473);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border: 0.5px solid rgba(0, 0, 0, 0.28);
     border-radius: 10px;
-    box-shadow: 0 5px 5px #0000006b;
     margin: 12px auto;
 
     display: flex;
@@ -63,7 +118,7 @@ ul {
     word-break: break-all;
 }
 
-.task-container{
+.task-container {
     width: 100%;
     display: flex;
     justify-content: space-between;

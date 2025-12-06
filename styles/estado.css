@@ -12,7 +12,7 @@
 }
 
 .task-item.progress {
-    color: #ffd900;
+    color: #ff7b00;
 
     &:before {
         content: url("../icons/progress.svg");

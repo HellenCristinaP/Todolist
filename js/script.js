@@ -1,11 +1,11 @@
 const inputTask = document.getElementById("taskInput");
 const btnSubmit = document.getElementById("submit");
 const taskList = document.getElementById("taskList");
-const form = document.querySelector("form");
 
-form.addEventListener("submit", function(e) {
+btnSubmit.addEventListener("click", function(e) {
   validacao(e);
 });
+
 
 function validacao(e) {
   e.preventDefault();

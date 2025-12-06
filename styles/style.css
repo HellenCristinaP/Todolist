@@ -6,33 +6,55 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-    min-height: 100vhw;
+    background-color: #e6fafa;
+    min-height: 100vh;
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 0.85rem;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        color: #0d14a5;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 
-    color: #f3e6ff;
-    text-shadow: 0px 1px 4px #00000049, -1px 0px 4px #00000049, 0px -1px 4px #00000049, 1px 0px 4px #00000049, 1px 1px 4px #00000049;
+    color: #05083B;
 }
 
 section {
     max-width: 600px;
-    margin: 0 auto 20px auto;
     padding: 10px;
+
     background-color: #c7c7c74d;
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #383838;
     color: #000000;
     text-align: center;
+
+    p {
+        font-size: 1rem;
+        margin: 5px 0 10px 0;
+    }
 
     h2 {
         font-size: 1.25rem;
@@ -48,19 +70,20 @@ section {
         margin: 5px auto;
         width: 80%;
     }
+
+    kbd {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #202020;
+        background-color: #eeeeee7e;
+        border: 1px solid #858585;
+        border-radius: 3px;
+        padding: 1px 5px;
+        white-space: nowrap;
+    }
 }
 
-kbd {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.85em;
-    font-weight: 700;
-    color: #202020;
-    background-color: #eeeeee7e;
-    border: 1px solid #f3f3f3;
-    border-radius: 3px;
-    padding: 1px 5px;
-    white-space: nowrap;
-}
 
 input {
     font-size: 1rem;
@@ -73,7 +96,9 @@ input {
 }
 
 #submit {
-    background-color: #129700;
+    background-color: #0d14a5;
+    box-shadow: 0 4px 1px rgba(7, 0, 0, 0.432);
+
     color: white;
     padding: 10px 20px;
     border: none;
@@ -82,11 +107,13 @@ input {
     font-size: 1rem;
 
     &:hover {
-        background-color: #0e7a00;
+        background-color: #0d1585;
     }
 
     &:active {
-        background-color: #0a5200;
+        background-color: #05083B;
+        box-shadow: 0 2px 1px rgba(7, 0, 0, 0.432);
+        padding: 8px 20px;
     }
 }
 
@@ -94,27 +121,21 @@ form {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+    margin: 15px;
 }
 
-main > ul {
+main>ul {
     /* From https://css.glass */
-    background: rgba(8, 1, 39, 0.199);
+    background: #6d649638;
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(7, 0, 0, 0.473);
+    box-shadow: 0 4px 5px rgba(7, 0, 0, 0.432);
     backdrop-filter: blur(2.4px);
     -webkit-backdrop-filter: blur(2.4px);
     border: 0.5px solid rgba(0, 0, 0, 0.28);
     border-radius: 10px;
-    margin: 12px auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: #000000 1px solid;
+    margin: auto;
     padding: 10px;
-    max-width: 85%;
     word-break: break-all;
 }
 
@@ -124,4 +145,28 @@ main > ul {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+}
+
+@media (max-width: 600px) {
+    section {
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    main>ul {
+        width: 90%;
+        padding: 10px;
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 600px) {
+    section {
+        width: 500px;
+        margin: 0 auto 20px auto;
+    }
+
+    main>ul {
+        width: 78%;
+    }
 }

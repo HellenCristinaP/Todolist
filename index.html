@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <aside><a href="#taskInput" autofocus="autofocus">Ir direto para campo de entrada de tarefa</a></aside>
     <main>
         <h1>Seja bem-vindo ao To-do List</h1>
         <section>
@@ -16,20 +17,25 @@
             <p>Digite o nome da tarefa e aperte no botão ou no <kbd>Enter</kbd></p>
             <p>A tarefa tem 3 estados, que muda conforme clica nela:</p>
             <ul>
-                <li>1º estado: tarefa pendente <img src="icons/circle.svg" alt="imagem de pendente" aria-hidden="true"></li>
-                <li>2º estado: tarefa em andamento <img src="icons/progress.svg" alt="imagem de andamento" aria-hidden="true"></li>
-                <li>3º estado: tarefa concluída <img src="icons/check.png" alt="imagem de concluída" aria-hidden="true"></li>
+                <li>1º estado: tarefa pendente <img src="icons/circle.svg" alt="imagem de pendente" aria-hidden="true">
+                </li>
+                <li>2º estado: tarefa em andamento <img src="icons/progress.svg" alt="imagem de andamento"
+                        aria-hidden="true"></li>
+                <li>3º estado: tarefa concluída <img src="icons/check.png" alt="imagem de concluída" aria-hidden="true">
+                </li>
             </ul>
         </section>
         <form>
             <input type="text" id="taskInput" placeholder="Digite uma tarefa" required>
-            <button id="submit">Adicionar</button>
+            <input type="submit" id="submit" value="Adicionar">
         </form>
+
+
         <ul id="taskList">
             <!-- As tarefas serão adicionadas aqui -->
         </ul>
     </main>
-    <script src="./js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
